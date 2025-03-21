@@ -6,19 +6,12 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 import string
 import re
 import collections
-
+from evaluate import load
 splits = {'train': 'squad_v2/train-00000-of-00001.parquet', 'validation': 'squad_v2/validation-00000-of-00001.parquet'}
 df = pd.read_parquet("hf://datasets/rajpurkar/squad_v2/" + splits["validation"])
 
 model_name = "meta-llama/Meta-Llama-3-8B-Instruct"
-# meta-llama/Llama-3.1-8B-Instruct
 
-# Configure 8-bit quantization
-bnb_config8 = BitsAndBytesConfig(
-    load_in_8bit=True,
-    bnb_8bit_compute_dtype=torch.float16,
-    bnb_8bit_use_double_quant=True
-)
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
@@ -104,78 +97,14 @@ example = {
     "answer": "1889"
 }
 
-squad_metric = evaluate.load("squad")
-
-em_scores = []
-f1_scores = []
-def get_tokens(s):
-  if not s: return []
-  return normalize_answer(s).split()
-def compute_f1(a_gold, a_pred):
-  gold_toks = get_tokens(a_gold)
-  pred_toks = get_tokens(a_pred)
-  common = collections.Counter(gold_toks) & collections.Counter(pred_toks)
-  num_same = sum(common.values())
-  if len(gold_toks) == 0 or len(pred_toks) == 0:
-    # If either is no-answer, then F1 is 1 if they agree, 0 otherwise
-    return int(gold_toks == pred_toks)
-  if num_same == 0:
-    return 0
-  precision = 1.0 * num_same / len(pred_toks)
-  recall = 1.0 * num_same / len(gold_toks)
-  f1 = (2 * precision * recall) / (precision + recall)
-  return f1
-def compute_exact(a_gold, a_pred):
-  return int(normalize_answer(a_gold) == normalize_answer(a_pred))
-def normalize_answer(s):
-  """Lower text and remove punctuation, articles and extra whitespace."""
-  def remove_articles(text):
-    regex = re.compile(r'\b(a|an|the)\b', re.UNICODE)
-    return re.sub(regex, ' ', text)
-  def white_space_fix(text):
-    return ' '.join(text.split())
-  def remove_punc(text):
-    exclude = set(string.punctuation)
-    return ''.join(ch for ch in text if ch not in exclude)
-  def lower(text):
-    return text.lower()
-  return white_space_fix(remove_articles(remove_punc(lower(s))))
 
 
-def get_raw_scores(df, preds):
-    exact_scores = {}
-    f1_scores = {}
-    
-    for i in range(len(df)):
-        qid = df.iloc[i]["id"]
-        gold_answers = df.iloc[i]["answers"]["text"]
-        
-        if len(gold_answers) == 0:
-            # For unanswerable questions, the only correct answer is an empty string
-            gold_answers = ['Unanswerable']
-        
-        a_pred = preds.get(qid, '')  # Use `.get()` to avoid KeyError
+squad_metric = load("squad_v2")
 
-        # if a_pred == "Unanswerable":
-        #     a_pred = ''  # Convert 'Unanswerable' to ''
-        print("qid",qid)
-        print("a_pred",a_pred)
-        print("gold_answers",gold_answers)
-        
-        if qid not in preds:
-            print(f'Missing prediction for {qid}')
-            continue
-        
-        a_pred = preds[qid]
-        
-        # Take max over all gold answers
-        exact_scores[qid] = max(compute_exact(a, a_pred) for a in gold_answers)
-        f1_scores[qid] = max(compute_f1(a, a_pred) for a in gold_answers)
-    
-    return exact_scores, f1_scores
-predictions = {}
 
-for i in range(len(df)):
+predictions = []
+references=[]
+for i in range(10):
     passage = df.iloc[i]["context"]
     question = df.iloc[i]["question"]
     qid = df.iloc[i]["id"]
@@ -189,30 +118,30 @@ for i in range(len(df)):
     print("Predicted Answer:", predicted_answer)
 
     # Store prediction
-    predictions[qid] = predicted_answer
-
+    
+    # predictions[qid] = predicted_answer
+    # predictions = [{'prediction_text': '1976', 'id': '56e10a3be3433e1400422b22', 'no_answer_probability': 0.}]
+    prediction= {'prediction_text':predicted_answer,'id':qid, 'no_answer_probability': 0. }
+    predictions.append(prediction)
     # Get gold standard answers
-    gold_answers = df.iloc[i]["answers"]["text"]
+    gold_answers = df.iloc[i]["answers"]
     print("Gold Answers:", gold_answers)
+    reference={'answers':gold_answers,'id':df.iloc[i]["id"]}
+    references.append(reference)
+    
 
         # Compute scores every 1000 samples or at the last iteration
     if (i + 1) % 1000 == 0 or (i + 1) == len(df):
         print(f"\nComputing scores after {i+1} samples...\n")
-        exact_scores, f1_scores = get_raw_scores(df.iloc[:i+1], predictions)
+        results = squad_metric.compute(predictions=predictions, references=references)
 
-        exact_match_score = sum(exact_scores.values()) / len(exact_scores)
-        f1_score = sum(f1_scores.values()) / len(f1_scores)
+        print(f"Results after {i+1} samples: {results:.4f}")
+        
 
-        print(f"Exact Match Score after {i+1} samples: {exact_match_score:.4f}")
-        print(f"F1 Score after {i+1} samples: {f1_score:.4f}\n")
 
-# Compute scores using get_raw_scores
-exact_scores, f1_scores = get_raw_scores(df, predictions)
+# print(references)
+# print(predictions)
+results = squad_metric.compute(predictions=predictions, references=references)
 
-print(exact_scores)
-print(f1_scores)
-exact_match_score = sum(exact_scores.values()) / len(exact_scores)
-f1_score = sum(f1_scores.values()) / len(f1_scores)
 
-print(f"Average Exact Match Score: {exact_match_score:.4f}")
-print(f"Average F1 Score: {f1_score:.4f}")
+print(results)
