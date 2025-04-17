@@ -1,0 +1,2310 @@
+nohup: ignoring input
+2025-04-16 13:53:42.358836: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-04-16 13:53:42.374695: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1744826022.392513  617404 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1744826022.397966  617404 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1744826022.412233  617404 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1744826022.412260  617404 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1744826022.412265  617404 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1744826022.412269  617404 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-04-16 13:53:42.416922: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]
+Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.55s/it]
+Loading checkpoint shards:  50%|█████     | 2/4 [00:03<00:03,  1.56s/it]
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:04<00:01,  1.55s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:04<00:00,  1.07s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:04<00:00,  1.25s/it]
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+
+Processing Example 1
+Question: What is the SARS-CoV-2 PCR percent test positivity in the last week of the reporting period from 9 December 2024 to 5 January 2025?
+id: 1
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''During the four-week reporting period from 9 December 2024 to 5 
+January 2025, weekly SARS-CoV-2 PCR percent test positivity changed from
+ 8.5% in the beginning week of the reporting period to 8.1% in the last 
+week, as detected in integrated sentinel and systematic virological 
+surveillance within the Global Influenza Surveillance and Response 
+System (GISRS). During this period, an average of 59 114 specimens 
+across 108 countries were tested for SARS-CoV-2 each week.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the SARS-CoV-2 PCR percent test positivity in the last week of the reporting period from 9 December 2024 to 5 January 2025?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+8.1%
+Inference Time: 1.4847 seconds
+Predicted Answer: 8.1%
+Gold Answers: ['8.1%']
+
+Processing Example 2
+Question: Which variant amongst the variants under monitoring has the largest prevalence?
+id: 2
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''The 
+World Health Organization is monitoring several SARS-CoV-2 variants, 
+including one variant of interest (VOI) JN.1, and seven variants under 
+monitoring (VUMs). JN.1, the VOI, accounted for 15.0% of sequences in 
+week 1 of 2025. The VUM, XEC and LP.8.1 continue to increase in 
+prevalence, accounting for 44.8% and 4.7%, respectively, of sequences in
+ week 1 of 2025, and are the only tracked variants currently growing in 
+prevalence. All the remaining VUMs are declining in prevalence.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, Which variant amongst the variants under monitoring has the largest prevalence?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+44.8%
+Inference Time: 1.0518 seconds
+Predicted Answer: 44.8%
+Gold Answers: ['XEC']
+
+Processing Example 3
+Question: Did the new deaths increase or decrease during the period 9 December 2024 to 5 January 2025 compared to the previous 4-week period?
+id: 3
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Twenty-four
+ (10%) countries reported COVID-19 deaths, and 79 (34%) countries 
+reported COVID-19 cases globally during the 28-day period from 9 
+December 2024 to 5 January 2025. According to the data provided, over 
+161 000 new cases were reported during the 28-day period, representing a
+ 21% decrease in the number of reported cases. At the same time, around 
+3300 new deaths were reported, representing a 14% increase in new deaths
+ compared to the previous 28-day period (11November to 8 December 2024).'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, Did the new deaths increase or decrease during the period 9 December 2024 to 5 January 2025 compared to the previous 4-week period?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+A 14% increase
+Inference Time: 1.1656 seconds
+Predicted Answer: A 14% increase
+Gold Answers: ['increased']
+
+Processing Example 4
+Question: How many new intensive care unit admissions were reported in the available data?
+id: 4
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''During
+ the same period, hospitalizations and intensive care unit (ICU) 
+admissions were reported at least once in 37 (16%) and 28 (12%) 
+countries, respectively. Approximately 14,600 new hospitalizations and 
+1000 new intensive care unit admissions were recorded based on the data 
+that was available. New hospitalizations increased by 10% while ICU 
+admissions stayed unchanged among the countries that consistently 
+reported these data over the past and previous reporting periods.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How many new intensive care unit admissions were reported in the available data?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+1000
+Inference Time: 0.8549 seconds
+Predicted Answer: 1000
+Gold Answers: ['1000']
+
+Processing Example 5
+Question: How many older adults received a dose of the COVID-19 vaccine during the first three quarters of 2024 across the 75 member states?
+id: 5
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''On 20 December 2024, WHO published the latest COVID-19 Vaccination Insights Report
+ for quarter three (July-September) 2024. Globally, 39.2 million 
+individuals (+14.8 million during quarter 3) have received a dose of 
+COVID-19 vaccine across 90 reporting Member States (MS), containing 31% 
+of the global population, in quarters 1, 2, and 3. Among older adults, 
+19.7 million individuals (+8.9 million in quarter 3) received a dose 
+across the 75 MS reporting on uptake in this group, corresponding to an 
+uptake rate of 1.68% at the end of 2024.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How many older adults received a dose of the COVID-19 vaccine during the first three quarters of 2024 across the 75 member states?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+19.7 million
+Inference Time: 1.0501 seconds
+Predicted Answer: 19.7 million
+Gold Answers: ['19.7 million']
+
+Processing Example 6
+Question: Is the prevalence of SARS-CoV-2 high during any specific season?
+id: 6
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''SARS-CoV-2, the virus that causes COVID-19, largely circulates without clear seasonality and continues to infect, causing severe acute disease and post-COVID-19 condition. The impact varies by country, and WHO's ability to monitor circulation, severity, and virus evolution is challenged by reduced surveillance, testing, sequencing, and limited integration into long-term prevention programs. Changes to COVID-19 surveillance over the past five years have been consistent, but integration is variable across regions. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, Is the prevalence of SARS-CoV-2 high during any specific season?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+Unanswerable
+Inference Time: 0.9492 seconds
+Predicted Answer: Unanswerable
+Gold Answers: ['COVID-19 circulates without clear seasonality.']
+
+Processing Example 7
+Question: What percentage of new deaths were observed from 14 October to 10 November 2024 compared to the previous 28 days?
+id: 7
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''From the start of the pandemic until November 10, 2024, over 776.8 million confirmed COVID-19 cases and over 7 million confirmed deaths were notified to WHO across 234 countries. The majority of COVID-19 associated deaths occurred in 2020, 2021, and 2022, with increased immunity leading to a significant decrease in deaths. For the latest 4 week reporting period, from 14 October to 10 November 2024, 77 countries reported COVID-19 cases and 27 deaths globally. The number of reported cases decreased by 39%, with over 200 000 new cases and 36% of new deaths, compared to the previous 28 days.  '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What percentage of new deaths were observed from 14 October to 10 November 2024 compared to the previous 28 days?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+36%
+Inference Time: 0.8668 seconds
+Predicted Answer: 36%
+Gold Answers: ['36%']
+
+Processing Example 8
+Question: How many ICU admissions were observed in March?
+id: 8
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Overall, ICU admissions per 1000 hospitalizations have been decreasing since the peak in July 2021 when the rate was 245 per 1000 hospitalizations, dropping below 132 per 1000 hospitalizations at the beginning of 2022, and to less than 69 per 1000 hospitalizations by the end of 2023. At the beginning of 2024, there was an increase ICU admissions per 1000 hospitalizations, rising to above 191 per 1000 hospitalizations in March, and declining to 108 per 1000 hospitalizations in early November 2024. Meanwhile, deaths per 1000 hospitalization showed a consistent decline from June 2021 when they reached 253 per 1000 hospitalizations to a low level of 59 per 1000 hospitalizations in August 2023. Since January 2024, the rate has continued to decline reaching 41 deaths per 1000 hospitalizations by early November 2024.  '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How many ICU admissions were observed in March?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+Above 191 per 1000 hospitalizations
+Inference Time: 1.5045 seconds
+Predicted Answer: Above 191 per 1000 hospitalizations
+Gold Answers: ['191 per 1000 hospitalizations']
+
+Processing Example 9
+Question: What percentage of SARS-Cov-2 infections are estimated to result in long COVID?
+id: 9
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Post-COVID-19 condition (PCC), called "long COVID" by some, continues to pose a significant burden on health systems, with an estimated 6% of symptomatic SARS-CoV-2 infections resulting in PCC symptoms. While severe COVID-19 is a significant risk factor for PCC, over 90% of PCC cases arise following mild COVID-19 due to the sheer volume of infections. Vaccination appears to offer a protective effect, reducing the likelihood of developing PCC. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What percentage of SARS-Cov-2 infections are estimated to result in long COVID?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+6%
+Inference Time: 0.8598 seconds
+Predicted Answer: 6%
+Gold Answers: ['6%']
+
+Processing Example 10
+Question: How many people of the 90 member states received a vaccine dose by the end of the third quarter of 2024?
+id: 10
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''The COVID-19 vaccine rollout has evolved since 2021, with high-income countries initially having higher vaccination rates. From January 2024, WHO shifted from measuring "continuous" COVID-19 vaccination coverage since the start of the vaccine rollout to measuring annual uptake. Using the new monitoring approach, as of the end of the third quarter of 2024, 39.2 million people in 90 Member States (representing 31% of the global population) received a dose this year, with 14.8 million in quarter three alone. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How many people of the 90 member states received a vaccine dose by the end of the third quarter of 2024?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+39.2 million
+Inference Time: 1.0279 seconds
+Predicted Answer: 39.2 million
+Gold Answers: ['39.2 million']
+
+Processing Example 11
+Question: How many new COVID-19 cases were reported from September 16 to October 13, 2024?
+id: 11
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Thirty (13%) countries reported 
+COVID-19 deaths, and 95 (41%) countries reported COVID-19 cases globally
+ during the 28-day period from September 16 to October 13, 2024. 
+According to the data provided, over 330 000 new cases were reported 
+during the 28-day period, representing an 18% increase in the number of 
+reported cases. At the same time, over 4500 new deaths were reported, 
+representing a 25% decrease in new deaths compared to the previous 
+28-day period (19 August to 15 September 2024).'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How many new COVID-19 cases were reported from September 16 to October 13, 2024?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+over 330 000
+Inference Time: 1.1220 seconds
+Predicted Answer: over 330 000
+Gold Answers: ['over 330000 cases']
+
+Processing Example 12
+Question: How many specimens were tested for SARS-CoV-2 each week during the four week reporting period?
+id: 12
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''During the four-week reporting period from 19 August to 15 September 2024, weekly SARS-CoV-2 PCR percent test positivity decreased from 8.2% in the beginning week of the reporting period to 5.8% in the last week, as detected in integrated sentinel surveillance within the Global Influenza Surveillance and Response System (GISRS). During this period, an average of 16 209 specimens across 89 countries that reported at least once were tested for SARS-CoV-2 each week.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How many specimens were tested for SARS-CoV-2 each week during the four week reporting period?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+16 209
+Inference Time: 0.8367 seconds
+Predicted Answer: 16 209
+Gold Answers: ['16209 specimens across 89 countries']
+
+Processing Example 13
+Question: The new variant XEC is a recombinant of which two variants?
+id: 13
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''WHO is currently tracking several SARS-CoV-2 variants; two variants of interest (VOIs): BA.2.86 and JN.1; and seven variants under monitoring (VUMs): JN.1.7, JN.1.18, KP.2, KP.3, KP.3.1.1, LB.1, and XEC. As of 24 September 2024, a new variant named XEC, which is a recombinant of KS.1.1 and KP.3.3, has been classified as a VUM. Globally, JN.1 is the most reported variant of interest (VOI), now reported by 140 countries, accounting for 16.0% of sequences in week 37, having declined from a prevalence of 19.4% in week 34. SARS-CoV-2 variants KP.3.1.1 and XEC (a recently listed VUMs) are showing increasing prevalence globally, albeit at different rates while all the remaining are declining. KP.3.1.1 accounted for 46.6% of the sequences shared in week 37 compared to 36.6% in week 34 while XEC accounted for 4.8% in week 37 compared to 2.0% in week 34. KP.3 accounted for 14.4% of sequences in week 37 compared to 18.8% in week 34, KP.2 accounted for 8.1% of sequences in week 37 compared to 12.0% in week 34, JN.1.7 accounted for 0.1% in weeks 34 and 37, JN.1.18 accounted for 1.2% of sequences in week 37 compared to 2.3% in week 34, LB.1 accounted for 6.3% in week 37 compared to 6.9% in week 34.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, The new variant XEC is a recombinant of which two variants?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+KS.1.1 and KP.3.3
+Inference Time: 1.8382 seconds
+Predicted Answer: KS.1.1 and KP.3.3
+Gold Answers: ['KS.1.1 and KP.3.3']
+
+Processing Example 14
+Question: What is the percentage increase in the new ICU admission during the reported period?
+id: 14
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''During the same period, 42 and 31 countries provided data at least once on COVID-19 hospitalizations and admissions to an intensive care unit (ICU), respectively. From the available data, about 27 000 new hospitalizations and more than 1200 new ICU admissions were reported. Among the countries reporting these data consistently over the past and previous reporting period, there was an increase of 14% and 52% in new hospitalizations and new ICU admissions.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the percentage increase in the new ICU admission during the reported period?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+52%
+Inference Time: 0.8534 seconds
+Predicted Answer: 52%
+Gold Answers: ['52%']
+
+Processing Example 15
+Question: What percentage of sequences reported KP.3.1.1 during week 30?
+id: 15
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Globally, JN.1 is the most reported variant of interest (VOI), now reported by 139 countries, accounting for 20.6% of sequences in week 33, having declined from a prevalence of 22.2% in week 30.  KP.3.1.1 (a descendent lineage of JN.1 and a variant of interest or VUM) is showing increasing prevalence while LB.1 and JN.1.18 both also descendent lineages of JN.1 and VUMs, are showing stable prevalence globally. KP.3.1.1 accounted for 29.1% of the sequences shared in week 33 compared to 21.2% in week 30 while LB.1 and JN.1.18 accounted for 8.8% and 2.7% of sequences in week 33 compared to 8.8% and 2.2% in week 30, respectively. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What percentage of sequences reported KP.3.1.1 during week 30?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+21.2%
+Inference Time: 1.0566 seconds
+Predicted Answer: 21.2%
+Gold Answers: ['21.2%']
+
+Processing Example 16
+Question: What is the percentage increase in deaths and new cases from the 28-day period including 22 July to 18 August 2024 period to the previous 28-day period?
+id: 16
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Globally, during the 28-day period (22 July to 18 August 2024), the number of new cases and deaths increased by 23% and 44% compared to the previous 28-day period (24 June to 18 August 2024), with 238 000 new cases reported across 91 (39%) countries and about 4400 new fatalities reported across 35 (15%) countries, respectively. As of 22 July to 18 August 2024, over 776 million confirmed cases and more than seven million deaths have been reported globally since the beginning of pandemic.  '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the percentage increase in deaths and new cases from the 28-day period including 22 July to 18 August 2024 period to the previous 28-day period?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+44% and 23%
+Inference Time: 1.2276 seconds
+Predicted Answer: 44% and 23%
+Gold Answers: ['Deaths increased by 44%, and new cases increased by 23%.']
+
+Processing Example 17
+Question: How many older adults received a dose of the COVID-19 vaccine during quarter one of 2024 across 60 reporting memeber states?
+id: 17
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''WHO published the latest COVID-19 Vaccination Insights Report for quarter one (Jan-Mar) 2024. Globally, 9.8 million individuals received a dose of COVID-19 vaccine across 73 reporting Member States (MS) containing 22% of the global population.  Among older adults, 4.9 million individuals received a dose across the 60 MS reporting on uptake in this group, corresponding to an uptake rate of 0.42% so far this year.  '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How many older adults received a dose of the COVID-19 vaccine during quarter one of 2024 across 60 reporting memeber states?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+system
+
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+assistant
+
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''WHO published the latest COVID-19 Vaccination Insights Report for quarter one (Jan-Mar) 2024. Globally, 9.8 million individuals received a dose of COVID-19 vaccine across 73 reporting Member States (MS) containing 22% of the global population.  Among older adults, 4.9 million individuals received a dose across the 60 MS reporting on uptake in this group, corresponding to an uptake rate of 0.42% so far this year.  '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How many older adults received a dose of the COVID-19 vaccine during quarter one of 2024 across 60 reporting memeber states?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 4.9 million
+Inference Time: 52.6220 seconds
+Predicted Answer: 4.9 million
+Gold Answers: ['4.9 million']
+
+Processing Example 18
+Question: How many specimens were tested during each week of the reporting period, 27 May to 23 June 2024?
+id: 18
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''SARS-CoV-2 PCR percent positivity during the four-week reporting period from 27 May to 23 June 2024, as detected in integrated sentinel surveillance as part of the Global Influenza Surveillance and Response System (GISRS) and reported to FluNet increased from 5.6 to 7.1% from countries 84. During this period, an average of 16 888 specimens were tested for SARS-CoV-2 each week.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How many specimens were tested during each week of the reporting period, 27 May to 23 June 2024?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+16 888
+Inference Time: 1.0069 seconds
+Predicted Answer: 16 888
+Gold Answers: ['16888 on average']
+
+Processing Example 19
+Question: What is the number of confirmed cases globally as of 23 June 2024 since the beginning of the pandemic?
+id: 19
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Globally, the number of new cases were at stable level during the past 28-day period of 27 May to 23 June 2024 compared to the previous 28-day period (29 April to 26 May 2024), with over one hundred and thirty-five thousand new cases reported. The number of new deaths decreased slightly by 3% compared to the previous 28-day period, with more than 2000 new fatalities reported. As of 23 June 2024, over 775 million confirmed cases and more than seven million deaths have been reported globally since the beginning of pandemic.  '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the number of confirmed cases globally as of 23 June 2024 since the beginning of the pandemic?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+Over 775 million
+Inference Time: 1.0601 seconds
+Predicted Answer: Over 775 million
+Gold Answers: ['over 775 million']
+
+Processing Example 20
+Question: How many new hospitalizations were reported?
+id: 20
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''During the same period, 47 and 36 countries provided data at least once on COVID-19 hospitalizations and admissions to an intensive care unit (ICU), respectively. From the available data, over 20 000 new hospitalizations and more than 500 new ICU admissions were reported.  Among the countries reporting these data consistently over the current and past reporting period, there was an overall increase of 31% and 12% in new hospitalizations and new ICU admissions, respectively. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How many new hospitalizations were reported?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+Over 20,000
+Inference Time: 1.1397 seconds
+Predicted Answer: Over 20,000
+Gold Answers: ['over 20000']
+
+Processing Example 21
+Question: What is the percentage positivity of SARS-CoV-2 PCR reported by GISRS during the week ending 26 May 2024?
+id: 21
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''SARS-CoV-2 PCR percent positivity, as detected in integrated sentinel
+ surveillance as part of the Global Influenza Surveillance and Response 
+System (GISRS) and reported to FluNet was 6.3% from 80 countries during 
+the week ending 26 May 2024 compared to 7.1% from 87 countries from the 
+previous week. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the percentage positivity of SARS-CoV-2 PCR reported by GISRS during the week ending 26 May 2024?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+6.3%
+Inference Time: 1.0823 seconds
+Predicted Answer: 6.3%
+Gold Answers: ['6.3%']
+
+Processing Example 22
+Question: What is the most reported variant of interest in week 21?
+id: 22
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''KP.2 and KP.3, both descendent lineages of JN.1 
+and variants under monitoring (VUMs) continue to show increasing 
+prevalence globally. They accounted for 22.7% and 22.4% of sequences in 
+week 21 compared to 14.6% and 13.0% in week 18, respectively. Globally, 
+JN.1 is the most reported variant of interest (VOI) (now reported by 132
+ countries), accounting for 47.1% of sequences in week 21 and having 
+declined from a prevalence of 56.0% in week 18.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the most reported variant of interest in week 21?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+JN.1
+Inference Time: 1.0708 seconds
+Predicted Answer: JN.1
+Gold Answers: ['JN.1']
+
+Processing Example 23
+Question: Did the number of new cases increase or decrease from 29 April to 26 May 2024 compared to the previous 28-day period?
+id: 23
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Globally, the 
+number of new cases decreased by 11% during the past 28-day period of 29
+ April to 26 May 2024 compared to the previous 28-day period (1 to 28 
+April 2024), with over one hundred and twenty-nine thousand new cases 
+reported.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, Did the number of new cases increase or decrease from 29 April to 26 May 2024 compared to the previous 28-day period?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+Decreased
+Inference Time: 0.7665 seconds
+Predicted Answer: Decreased
+Gold Answers: ['decreased']
+
+Processing Example 24
+Question: What is the percentage decrease in the new hospitalizations from 29 April to 26 May 2024?
+id: 24
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''During the period from 29 
+April to 26 May 2024, COVID-19 new hospitalizations and admissions to an
+ intensive care unit (ICU) both recorded an overall decrease of 57% and 
+38% with over 14 000 and more than 400 admissions, respectively, from 
+countries consistently reporting.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the percentage decrease in the new hospitalizations from 29 April to 26 May 2024?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+57%
+Inference Time: 0.8395 seconds
+Predicted Answer: 57%
+Gold Answers: ['57%']
+
+Processing Example 25
+Question: What are the variants under monitoring that were de-escalated during to low prevalence for more than eight epidemiological weeks?
+id: 25
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Globally, JN.1 was the most reported variant of interest (VOI, now reported by 121 countries), accounting for 95.1.8% of sequences in week 13 compared to 93.0% in week 10. Its parent lineage, BA.2.86, has been declining and accounted for 1.6% of sequences in week 13 compared to 3.0% in week 10. Three variants under monitoring (VUMs): XBB, XBB.1.9.1, and XBB.2.3 have been de-escalated after having a prevalence of less than 1% for more than eight epidemiological weeks globally and across the WHO regions.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What are the variants under monitoring that were de-escalated during to low prevalence for more than eight epidemiological weeks?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+XBB, XBB.1.9.1, and XBB.2.3
+Inference Time: 2.5155 seconds
+Predicted Answer: XBB, XBB.1.9.1, and XBB.2.3
+Gold Answers: ['XBB, XBB.1.9.1, and XBB.2.3']
+
+Processing Example 26
+Question: What is the number of deaths reported globally as of 31 March 2024?
+id: 26
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Globally, the number of new cases decreased by 11% during the past 28-day period of 4-31 March 2024 compared to the previous 28-day period (5 February to 3 March 2024), with over two hundred and seven-five thousand new cases reported. The number of new deaths decreased by 41% as compared to the previous 28-day period, with over 4200 new fatalities reported. As of 31 March 2024, over 774 million confirmed cases and more than seven million deaths have been reported globally.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the number of deaths reported globally as of 31 March 2024?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+Seven million
+Inference Time: 0.8624 seconds
+Predicted Answer: Seven million
+Gold Answers: ['more than seven million']
+
+Processing Example 27
+Question: What is the SARS-CoV-2 PCR percent positivity reported to FluNet as of 3 March 2024?
+id: 27
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''SARS-CoV-2 PCR percent positivity, as detected in integrated sentinel surveillance as part of the Global Influenza Surveillance and Response System (GISRS) and reported to FluNet was around 11% as of 3 March 2024.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the SARS-CoV-2 PCR percent positivity reported to FluNet as of 3 March 2024?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+11%
+Inference Time: 0.8367 seconds
+Predicted Answer: 11%
+Gold Answers: ['11%']
+
+Processing Example 28
+Question: What is the most reported variant of interest (VOI) in week 9?
+id: 28
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Globally, JN.1 is the most reported VOI (now reported by 115 countries), accounting for 90.3% of sequences in week 9 compared to 89.4% in week six. Its parent lineage, BA.2.86, is declining and accounted for 2.2% of sequences in week 9 compared to 3.0% in week six.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the most reported variant of interest (VOI) in week 9?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+JN.1
+Inference Time: 1.0310 seconds
+Predicted Answer: JN.1
+Gold Answers: ['JN.1']
+
+Processing Example 29
+Question: What is the percentage decrease in new COVID-19 hospitalizations from 5 February to 3 March 2024?
+id: 29
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''During the period from 5 February to 3 March 2024, COVID-19 new hospitalizations and admissions to an intensive care unit (ICU) both recorded an overall decrease of 35% and 64% with over 78 000 and 500 admissions, respectively.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the percentage decrease in new COVID-19 hospitalizations from 5 February to 3 March 2024?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+35%
+Inference Time: 0.8385 seconds
+Predicted Answer: 35%
+Gold Answers: ['35%']
+
+Processing Example 30
+Question: What is the percentage decrease in COVID-19 ICU admissions from 8 January to 4 February 2024?
+id: 30
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''During the period from 8 January to 4 February 2024, COVID-19 new hospitalizations and admissions to an intensive care unit (ICU) both recorded an overall decrease of 32% and 38% with over 114 000 and more than 1300 admissions, respectively.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the percentage decrease in COVID-19 ICU admissions from 8 January to 4 February 2024?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+38%
+Inference Time: 0.8315 seconds
+Predicted Answer: 38%
+Gold Answers: ['38%']
+
+Processing Example 31
+Question: What is the percentage of reported JN.1 sequences in week 4 of 2024?
+id: 31
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Globally, JN.1 is the most reported VOI (now reported by 99 countries), accounting for 88.0% of sequences in week 4 of 2024 compared to 64.5% in week 52 of 2023.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the percentage of reported JN.1 sequences in week 4 of 2024?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+88.0%
+Inference Time: 1.0202 seconds
+Predicted Answer: 88.0%
+Gold Answers: ['88.0%']
+
+Processing Example 32
+Question: What is the percentage increase in new cases from 11 December 2023 to 7 January 2024 compared to the previous 28-day period?
+id: 32
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Globally, the number of new cases increased by 4% during the 28-day period of 11 December 2023 to 7 January 2024 as compared to the previous 28-day period, with over 1.1 million new cases. The number of new deaths decreased by 26% as compared to the previous 28-day period, with 8700 new fatalities reported. As of 7 January 2024, over 774 million confirmed cases and over seven million deaths have been reported globally. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the percentage increase in new cases from 11 December 2023 to 7 January 2024 compared to the previous 28-day period?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+4%
+Inference Time: 0.8742 seconds
+Predicted Answer: 4%
+Gold Answers: ['4%']
+
+Processing Example 33
+Question: What is the number of new COVID19 hospitalizations and ICU admissions from 11 December 2023 to 7 January 2024?
+id: 33
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''During the period from 11 December 2023 to 7 January 2024, COVID-19 new hospitalizations and admissions to an intensive care unit (ICU) both recorded an overall increase of 40% and 13% with over 173 000 and 1900 admissions, respectively. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the number of new COVID19 hospitalizations and ICU admissions from 11 December 2023 to 7 January 2024?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+40% and 1900
+Inference Time: 1.2076 seconds
+Predicted Answer: 40% and 1900
+Gold Answers: ['over 173000 and 1900 respectively']
+
+Processing Example 34
+Question: What is the percentage of BA.2.86 sequences reported in week 48?
+id: 34
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Globally, JN.1 is currently the most circulating VOI and is now reported by 71 countries, accounting for around 66% of the sequences in week 52 compared to around 25% in week 48. Its parent lineage, BA.2.86, is stable and accounted for 7.8% of sequences in week 52 compared to 7.0% in week 48. The initial risk evaluation for JN.1 was published on 19 December 2023, with an overall evaluation of low public health risk at global level based on available evidence.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the percentage of BA.2.86 sequences reported in week 48?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+7.0%
+Inference Time: 1.0522 seconds
+Predicted Answer: 7.0%
+Gold Answers: ['7.0%']
+
+Processing Example 35
+Question: How many deaths are reported 20 November to 17 December 2023?
+id: 35
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Globally, the number of new cases increased by 52% during the 28-day period of 20 November to 17 December 2023 as compared to the previous 28-day period, with over 850 000 new cases reported. The number of new deaths decreased by 8% as compared to the previous 28-day period, with over 3000 new fatalities reported. As of 17 December 2023, over 772 million confirmed cases and nearly seven million deaths have been reported globally. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How many deaths are reported 20 November to 17 December 2023?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+over 3000
+Inference Time: 1.0309 seconds
+Predicted Answer: over 3000
+Gold Answers: ['over 3000']
+
+Processing Example 36
+Question: What is the percentage increase in the number of hospitalizations and ICU admissions of the current reporting period compared to the past one.
+id: 36
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''During the period from 13 November to 10 December 2023, over 118 000 new COVID-19 hospitalizations and over 1600 new intensive care unit (ICU) admissions have been recorded with an overall increase of 23% and 51% respectively amongst the countries reporting consistently within the current and past reporting periods. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the percentage increase in the number of hospitalizations and ICU admissions of the current reporting period compared to the past one.
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+23% and 51%
+Inference Time: 1.2076 seconds
+Predicted Answer: 23% and 51%
+Gold Answers: ['23% increase in hospitalizations and 51% increase in ICU admissions']
+
+Processing Example 37
+Question: What is the most-reported variant of interest globally as of 18 December 2023?
+id: 37
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''As of 18 December 2023, JN.1, a sub-lineage of BA.2.86 Omicron variant has been designated a separate variant of interest (VOI) apart from its parent lineage BA.2.86 due to its rapid increase in prevalence in recent weeks. Globally, EG.5 remains to be the most reported VOI. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the most-reported variant of interest globally as of 18 December 2023?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+EG.5
+Inference Time: 0.9254 seconds
+Predicted Answer: EG.5
+Gold Answers: ['EG.5']
+
+Processing Example 38
+Question: How many COVID-19 cases and new deaths were reported from 23 October to 19 November 2023?
+id: 38
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Globally, more than half a million new COVID-19 cases and over 2400 new deaths have been reported in the past 28-day period from 23 October to 19 November 2023. Compared to the previous 28-day period, those figures represent a 13% and 72% decrease in cases and deaths respectively.  As of 19 November 2023, over 772 million confirmed cases and over six million deaths have been reported globally.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How many COVID-19 cases and new deaths were reported from 23 October to 19 November 2023?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+more than half a million new cases and over 2400 new deaths
+Inference Time: 1.9852 seconds
+Predicted Answer: more than half a million new cases and over 2400 new deaths
+Gold Answers: ['more than half a million new cases and over 2400 new deaths']
+
+Processing Example 39
+Question: How many new deaths are reported from 25 September to 22 October 2023?
+id: 39
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Globally, the number of new cases decreased by 42% during the 28-day period of 25 September to 22 October 2023 as compared to the previous 28-day period, with over half a million new cases reported. The number of new deaths decreased by 43% as compared to the previous 28-day period, with over 4700 new fatalities reported. As of 22 October 2023, over 771 million confirmed cases and over six million deaths have been reported globally.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How many new deaths are reported from 25 September to 22 October 2023?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+over 4700
+Inference Time: 1.0285 seconds
+Predicted Answer: over 4700
+Gold Answers: ['over 4700']
+
+Processing Example 40
+Question: What virus causes COVID-19
+id: 40
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''SARS-CoV-2, the virus that causes COVID-19, largely circulates without clear seasonality and continues to infect, causing severe acute disease and post-COVID-19 condition. The impact varies by country, and WHO's ability to monitor circulation, severity, and virus evolution is challenged by reduced surveillance, testing, sequencing, and limited integration into long-term prevention programs. Changes to COVID-19 surveillance over the past five years have been consistent, but integration is variable across regions. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What virus causes COVID-19
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+SARS-CoV-2
+Inference Time: 1.2432 seconds
+Predicted Answer: SARS-CoV-2
+Gold Answers: ['SARS-CoV-2']
+
+Processing Example 41
+Question: When did the majority of COVID-19 deaths occur?
+id: 41
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''From the start of the pandemic until November 10, 2024, over 776.8 million confirmed COVID-19 cases and over 7 million confirmed deaths were notified to WHO across 234 countries. The majority of COVID-19 associated deaths occurred in 2020, 2021, and 2022, with increased immunity leading to a significant decrease in deaths. For the latest 4 week reporting period, from 14 October to 10 November 2024, 77 countries reported COVID-19 cases and 27 deaths globally. The number of reported cases decreased by 39%, with over 200 000 new cases and 36% of new deaths, compared to the previous 28 days.  '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When did the majority of COVID-19 deaths occur?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+2020, 2021, and 2022
+Inference Time: 1.7024 seconds
+Predicted Answer: 2020, 2021, and 2022
+Gold Answers: ['2020,2021 and 2022', '2020,2021, and 2022', '2020,2021,2022']
+
+Processing Example 42
+Question: What was the number of deaths per 1000 hospitalizations during early November 2024?
+id: 42
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Overall, ICU admissions per 1000 hospitalizations have been decreasing since the peak in July 2021 when the rate was 245 per 1000 hospitalizations, dropping below 132 per 1000 hospitalizations at the beginning of 2022, and to less than 69 per 1000 hospitalizations by the end of 2023. At the beginning of 2024, there was an increase ICU admissions per 1000 hospitalizations, rising to above 191 per 1000 hospitalizations in March, and declining to 108 per 1000 hospitalizations in early November 2024. Meanwhile, deaths per 1000 hospitalization showed a consistent decline from June 2021 when they reached 253 per 1000 hospitalizations to a low level of 59 per 1000 hospitalizations in August 2023. Since January 2024, the rate has continued to decline reaching 41 deaths per 1000 hospitalizations by early November 2024.  '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What was the number of deaths per 1000 hospitalizations during early November 2024?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+41
+Inference Time: 0.7885 seconds
+Predicted Answer: 41
+Gold Answers: ['41,  41 deaths per 1000 hospitalizations']
+
+Processing Example 43
+Question: What percentage of symptomatic SARS-CoV-2 infections result in PCC symptoms?
+id: 43
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''Post-COVID-19 condition (PCC), called "long COVID" by some, continues to pose a significant burden on health systems, with an estimated 6% of symptomatic SARS-CoV-2 infections resulting in PCC symptoms. While severe COVID-19 is a significant risk factor for PCC, over 90% of PCC cases arise following mild COVID-19 due to the sheer volume of infections. Vaccination appears to offer a protective effect, reducing the likelihood of developing PCC. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What percentage of symptomatic SARS-CoV-2 infections result in PCC symptoms?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+6%
+Inference Time: 0.8623 seconds
+Predicted Answer: 6%
+Gold Answers: ['6%']
+
+Processing Example 44
+Question: Which countries initially had higher vaccination rates?
+id: 44
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''The COVID-19 vaccine rollout has evolved since 2021, with high-income countries initially having higher vaccination rates. From January 2024, WHO shifted from measuring "continuous" COVID-19 vaccination coverage since the start of the vaccine rollout to measuring annual uptake. Using the new monitoring approach, as of the end of the third quarter of 2024, 39.2 million people in 90 Member States (representing 31% of the global population) received a dose this year, with 14.8 million in quarter three alone. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, Which countries initially had higher vaccination rates?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+system
+
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+assistant
+
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''The COVID-19 vaccine rollout has evolved since 2021, with high-income countries initially having higher vaccination rates. From January 2024, WHO shifted from measuring "continuous" COVID-19 vaccination coverage since the start of the vaccine rollout to measuring annual uptake. Using the new monitoring approach, as of the end of the third quarter of 2024, 39.2 million people in 90 Member States (representing 31% of the global population) received a dose this year, with 14.8 million in quarter three alone. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, Which countries initially had higher vaccination rates?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): high-income countries
+Inference Time: 52.0259 seconds
+Predicted Answer: high-income countries
+Gold Answers: ['high-income countries']
+
+Processing Example 45
+Question: How many specimens were tested for SARS-CoV-2 across 90 countries each week?
+id: 45
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''During the four-week reporting period from 16 September to 13 October
+ 2024, weekly SARS-CoV-2 PCR percent test positivity changed from 5.0% 
+in the beginning week of the reporting period to 6.1% in the last week, 
+as detected in integrated sentinel surveillance within the Global 
+Influenza Surveillance and Response System (GISRS). During this period, 
+an average of 14 506 specimens across 90 countries were tested for 
+SARS-CoV-2 each week.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How many specimens were tested for SARS-CoV-2 across 90 countries each week?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+14 506
+Inference Time: 0.8708 seconds
+Predicted Answer: 14 506
+Gold Answers: ['14 506 specimens']
+
+Processing Example 46
+Question: Which SARS-CoV-2 variant was not detected in week 41?
+id: 46
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''The World Health Organization (WHO) is 
+monitoring several SARS-CoV-2 variants, including two variants of 
+interest (VOIs): BA.2.86 and JN.1, alongside seven variants under 
+monitoring (VUMs). JN.1 remains the most prevalent VOI, reported in 144 
+countries and representing 12.2% of sequences in week 41, a decline from
+ 17.2% in week 38. Variants KP.3.1.1 and XEC are on the rise, with 
+KP.3.1.1 constituting 51.1% of sequences in week 41, up from 45.2% in 
+week 38, and XEC at 17.2%, increased from 8.9%. The prevalence of KP.3, 
+KP.2, JN.1.18, and LB.1 decreased, while JN.1.7 was not detected in week
+ 41, down from 0.1% in week 38. '''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, Which SARS-CoV-2 variant was not detected in week 41?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+JN.1.7
+Inference Time: 1.3453 seconds
+Predicted Answer: JN.1.7
+Gold Answers: ['JN.1.7']
+
+Processing Example 47
+Question: How many countries reported hospitalizations at least once during the period?
+id: 47
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''During the same 
+period, hospitalizations and intensive care unit (ICU) admissions were 
+reported at least once in 43 and 30 countries, respectively. 
+Approximately 25,000 new hospitalizations and over 800 new intensive 
+care unit admissions were recorded based on the data that was available.
+ New hospitalizations and ICU admissions decreased by 9% and 39%, 
+respectively, among the countries that consistently reported these data 
+over the past and previous reporting periods.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How many countries reported hospitalizations at least once during the period?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+43
+Inference Time: 0.7722 seconds
+Predicted Answer: 43
+Gold Answers: ['43 countries']
+
+Processing Example 48
+Question: Which is the most reported variant of interest globally?
+id: 48
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''WHO is currently tracking several SARS-CoV-2 variants; two variants of interest (VOIs): BA.2.86 and JN.1; and seven variants under monitoring (VUMs): JN.1.7, JN.1.18, KP.2, KP.3, KP.3.1.1, LB.1, and XEC. As of 24 September 2024, a new variant named XEC, which is a recombinant of KS.1.1 and KP.3.3, has been classified as a VUM. Globally, JN.1 is the most reported variant of interest (VOI), now reported by 140 countries, accounting for 16.0% of sequences in week 37, having declined from a prevalence of 19.4% in week 34. SARS-CoV-2 variants KP.3.1.1 and XEC (a recently listed VUMs) are showing increasing prevalence globally, albeit at different rates while all the remaining are declining. KP.3.1.1 accounted for 46.6% of the sequences shared in week 37 compared to 36.6% in week 34 while XEC accounted for 4.8% in week 37 compared to 2.0% in week 34. KP.3 accounted for 14.4% of sequences in week 37 compared to 18.8% in week 34, KP.2 accounted for 8.1% of sequences in week 37 compared to 12.0% in week 34, JN.1.7 accounted for 0.1% in weeks 34 and 37, JN.1.18 accounted for 1.2% of sequences in week 37 compared to 2.3% in week 34, LB.1 accounted for 6.3% in week 37 compared to 6.9% in week 34.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, Which is the most reported variant of interest globally?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+JN.1
+Inference Time: 1.1586 seconds
+Predicted Answer: JN.1
+Gold Answers: ['JN.1']
+
+Processing Example 49
+Question: How much percentage of the global population have received a dose of COVID-19 vaccine?
+id: 49
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''On 23 September 2024, WHO published the latest COVID-19 Vaccination Insights Report for quarter two (April-June) 2024. Globally, 16.6 million individuals (+6.4 million during quarter 2) have received a dose of COVID-19 vaccine across 79 reporting Member States (MS), containing 22% of the global population, in quarters 1 and 2. Among older adults, 9.4 million individuals (+5.4 million in quarter 2) received a dose across the 63 MS reporting on uptake in this group, corresponding to an uptake rate of 0.81% so far this year. Data collection for quarter three (July-September) will open on 15 October 2024.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, How much percentage of the global population have received a dose of COVID-19 vaccine?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+22%
+Inference Time: 0.8688 seconds
+Predicted Answer: 22%
+Gold Answers: ['22%']
+
+Processing Example 50
+Question: What is the reporting period in the passage?
+id: 50
+response 
+system
+You are a precise and reliable assistant trained to answer questions strictly based on the given context. Use the provided articles delimited by triple quotes to answer questions in a single word or single phrase. If the answer cannot be found in the articles, write "Unanswerable"
+user
+Context: '''The Eiffel Tower was constructed in 1889 and is located in Paris, France.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, When was the Eiffel Tower built?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): 1889
+
+Context: '''Albert Einstein developed the theory of relativity.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who developed the theory of relativity?"
+
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Albert Einstein"
+
+Context: '''No information is given about the president.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, "Who is the president?"
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text): "Unanswerable"
+
+Now, answer the following:
+Context: '''SARS-CoV-2 PCR percent positivity during the four-week reporting period from 24 June to 21 July 2024, as detected in integrated sentinel surveillance as part of the Global Influenza Surveillance and Response System (GISRS) and reported to FluNet, increased from 7.4% in the beginning week of the reporting period to 13.0% in the last, across 85 countries. During this period, an average of 17 358 specimens across 85 countries were tested for SARS-CoV-2 each week.'''
+The following question is about what is stated in the given context. Do not rely on external knowledge.
+According to the passage, What is the reporting period in the passage?
+If the answer is **not present in the context**, respond with exactly: "Unanswerable".
+Answer (only a single phrase, no explanations, no hashtags, no extra text):
+assistant
+assistant
+
+"24 June to 21 July 2024"
+Inference Time: 1.7154 seconds
+Predicted Answer: "24 June to 21 July 2024"
+Gold Answers: ['24 June to 21 July 2024']
+qid 1
+cleaned answer: 8.1%
+gold_answers ['8.1%']
+qid 2
+cleaned answer: 44.8%
+gold_answers ['XEC']
+qid 3
+cleaned answer: A 14% increase
+gold_answers ['increased']
+qid 4
+cleaned answer: 1000
+gold_answers ['1000']
+qid 5
+cleaned answer: 19.7 million
+gold_answers ['19.7 million']
+qid 6
+cleaned answer: Unanswerable
+gold_answers ['COVID-19 circulates without clear seasonality.']
+qid 7
+cleaned answer: 36%
+gold_answers ['36%']
+qid 8
+cleaned answer: Above 191 per 1000 hospitalizations
+gold_answers ['191 per 1000 hospitalizations']
+qid 9
+cleaned answer: 6%
+gold_answers ['6%']
+qid 10
+cleaned answer: 39.2 million
+gold_answers ['39.2 million']
+qid 11
+cleaned answer: over 330 000
+gold_answers ['over 330000 cases']
+qid 12
+cleaned answer: 16 209
+gold_answers ['16209 specimens across 89 countries']
+qid 13
+cleaned answer: KS.1.1 and KP.3.3
+gold_answers ['KS.1.1 and KP.3.3']
+qid 14
+cleaned answer: 52%
+gold_answers ['52%']
+qid 15
+cleaned answer: 21.2%
+gold_answers ['21.2%']
+qid 16
+cleaned answer: 44% and 23%
+gold_answers ['Deaths increased by 44%, and new cases increased by 23%.']
+qid 17
+cleaned answer: 4.9 million
+gold_answers ['4.9 million']
+qid 18
+cleaned answer: 16 888
+gold_answers ['16888 on average']
+qid 19
+cleaned answer: Over 775 million
+gold_answers ['over 775 million']
+qid 20
+cleaned answer: Over 20,000
+gold_answers ['over 20000']
+qid 21
+cleaned answer: 6.3%
+gold_answers ['6.3%']
+qid 22
+cleaned answer: JN.1
+gold_answers ['JN.1']
+qid 23
+cleaned answer: Decreased
+gold_answers ['decreased']
+qid 24
+cleaned answer: 57%
+gold_answers ['57%']
+qid 25
+cleaned answer: XBB, XBB.1.9.1, and XBB.2.3
+gold_answers ['XBB, XBB.1.9.1, and XBB.2.3']
+qid 26
+cleaned answer: Seven million
+gold_answers ['more than seven million']
+qid 27
+cleaned answer: 11%
+gold_answers ['11%']
+qid 28
+cleaned answer: JN.1
+gold_answers ['JN.1']
+qid 29
+cleaned answer: 35%
+gold_answers ['35%']
+qid 30
+cleaned answer: 38%
+gold_answers ['38%']
+qid 31
+cleaned answer: 88.0%
+gold_answers ['88.0%']
+qid 32
+cleaned answer: 4%
+gold_answers ['4%']
+qid 33
+cleaned answer: 40% and 1900
+gold_answers ['over 173000 and 1900 respectively']
+qid 34
+cleaned answer: 7.0%
+gold_answers ['7.0%']
+qid 35
+cleaned answer: over 3000
+gold_answers ['over 3000']
+qid 36
+cleaned answer: 23% and 51%
+gold_answers ['23% increase in hospitalizations and 51% increase in ICU admissions']
+qid 37
+cleaned answer: EG.5
+gold_answers ['EG.5']
+qid 38
+cleaned answer: more than half a million new cases and over 2400 new deaths
+gold_answers ['more than half a million new cases and over 2400 new deaths']
+qid 39
+cleaned answer: over 4700
+gold_answers ['over 4700']
+qid 40
+cleaned answer: SARS-CoV-2
+gold_answers ['SARS-CoV-2']
+qid 41
+cleaned answer: 2020, 2021, and 2022
+gold_answers ['2020,2021 and 2022', '2020,2021, and 2022', '2020,2021,2022']
+qid 42
+cleaned answer: 41
+gold_answers ['41,  41 deaths per 1000 hospitalizations']
+qid 43
+cleaned answer: 6%
+gold_answers ['6%']
+qid 44
+cleaned answer: high-income countries
+gold_answers ['high-income countries']
+qid 45
+cleaned answer: 14 506
+gold_answers ['14 506 specimens']
+qid 46
+cleaned answer: JN.1.7
+gold_answers ['JN.1.7']
+qid 47
+cleaned answer: 43
+gold_answers ['43 countries']
+qid 48
+cleaned answer: JN.1
+gold_answers ['JN.1']
+qid 49
+cleaned answer: 22%
+gold_answers ['22%']
+qid 50
+cleaned answer: "24 June to 21 July 2024"
+gold_answers ['24 June to 21 July 2024']
+{1: 1, 2: 0, 3: 0, 4: 1, 5: 1, 6: 0, 7: 1, 8: 0, 9: 1, 10: 1, 11: 0, 12: 0, 13: 1, 14: 1, 15: 1, 16: 0, 17: 1, 18: 0, 19: 1, 20: 1, 21: 1, 22: 1, 23: 1, 24: 1, 25: 1, 26: 0, 27: 1, 28: 1, 29: 1, 30: 1, 31: 1, 32: 1, 33: 0, 34: 1, 35: 1, 36: 0, 37: 1, 38: 1, 39: 1, 40: 1, 41: 0, 42: 0, 43: 1, 44: 1, 45: 0, 46: 1, 47: 0, 48: 1, 49: 1, 50: 1}
+{1: 1.0, 2: 0, 3: 0, 4: 1.0, 5: 1.0, 6: 0, 7: 1.0, 8: 0.888888888888889, 9: 1.0, 10: 1.0, 11: 0.3333333333333333, 12: 0, 13: 1.0, 14: 1.0, 15: 1.0, 16: 0.4615384615384615, 17: 1.0, 18: 0, 19: 1.0, 20: 1.0, 21: 1.0, 22: 1.0, 23: 1.0, 24: 1.0, 25: 1.0, 26: 0.6666666666666666, 27: 1.0, 28: 1.0, 29: 1.0, 30: 1.0, 31: 1.0, 32: 1.0, 33: 0.5, 34: 1.0, 35: 1.0, 36: 0.4615384615384615, 37: 1.0, 38: 1.0, 39: 1.0, 40: 1.0, 41: 0.5714285714285715, 42: 0.2857142857142857, 43: 1.0, 44: 1.0, 45: 0.8, 46: 1.0, 47: 0.6666666666666666, 48: 1.0, 49: 1.0, 50: 1.0}
+Average Exact Match Score: 0.7000
+Average F1 Score: 0.8127
+Average inference time per prediction: 3.1588 seconds
