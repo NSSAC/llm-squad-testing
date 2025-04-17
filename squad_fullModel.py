@@ -104,7 +104,7 @@ squad_metric = load("squad_v2")
 
 predictions = []
 references=[]
-for i in range(10):
+for i in range(20):
     passage = df.iloc[i]["context"]
     question = df.iloc[i]["question"]
     qid = df.iloc[i]["id"]
