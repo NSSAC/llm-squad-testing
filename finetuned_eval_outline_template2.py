@@ -38,7 +38,6 @@ def create_hybrid_qa_system(model_name="/home/gjf3sa/sneha/midas/smol-course-llm
         sampler = None
 
     def create_few_shot_prompt(context, question):
-        """Create a prompt with few-shot examples to guide the model"""
         prompt = """I'll answer questions based on context. I'll give short, precise answers or say "Unanswerable" if the answer isn't in the context.
 
 Example 1:
