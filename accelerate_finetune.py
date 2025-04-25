@@ -35,9 +35,6 @@ class EpochTimer(TrainerCallback):
         logging.info(f"🕒 Epoch {int(state.epoch)} took {dt/60:.2f} min "
                      f"({dt:.1f} s)")
 
-            
-# (optional) bitsandbytes 4‑bit to save VRAM
-USE_4BIT = False                 # flip to True if you want 4‑bit base weights
 
 # ❷ Paths & LoRA hyper‑params
 BASE_MODEL = "meta-llama/Meta-Llama-3-8B-Instruct"
@@ -52,13 +49,12 @@ lora_cfg = LoraConfig(
                      "gate_proj","up_proj","down_proj"],
 )
 
-# ❹ Reload **real** weights
+
 base_model = AutoModelForCausalLM.from_pretrained(
     BASE_MODEL,
     torch_dtype=torch.float16,
     low_cpu_mem_usage=True,
-    device_map="auto",          # keep on CPU for now
-    load_in_4bit=USE_4BIT,           # bitsandbytes, optional
+    device_map="auto",          
 )    
 
 #Add LoRA (real FP16 adapters on CPU)
