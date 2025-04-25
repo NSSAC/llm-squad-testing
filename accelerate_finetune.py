@@ -17,11 +17,14 @@ from accelerate import init_empty_weights
 # also valid
 from accelerate.big_modeling import infer_auto_device_map, dispatch_model, init_empty_weights
 
+# enable logging
 logging.basicConfig(
     level=logging.INFO,                    
     format="%(asctime)s %(levelname)s %(message)s",
     datefmt="%H:%M:%S",
 )
+
+# Calculate the time it takes for each epoch
 class EpochTimer(TrainerCallback):
     def on_epoch_begin(self, args, state, control, **kwargs):
         self.t0 = time.perf_counter()
@@ -30,7 +33,18 @@ class EpochTimer(TrainerCallback):
         dt = time.perf_counter() - self.t0
         logging.info(f"🕒 Epoch {int(state.epoch)} took {dt/60:.2f} min "
                      f"({dt:.1f} s)")
+
+            
 class LoRATrainer(Trainer):
+    # Look at lines 1064- 1069
+    # https://github.com/huggingface/transformers/blob/7293fdc5b9cc809c2aa2ceb84f903ad47e5c06f0/src/transformers/models/llama/modeling_llama.py#L1061
+    
+    # Also used chatgpt prompting to obtain a solution to override the RuntimeError: Expected all tensors to be on the same device, but found at least two devices,
+
+
+    # Detailed explaination of below code
+
+    
     def compute_loss(
         self,
         model,
@@ -40,16 +54,18 @@ class LoRATrainer(Trainer):
     ):
         import torch.nn as nn
 
-        labels = inputs.pop("labels")
-        outputs = model(**inputs)               # logits on the layer’s GPU
+        labels = inputs.pop("labels") #Labels are removed  the model doesn’t compute its built-in loss.
+        outputs = model(**inputs)      # Run a forward pass to get logits         # logits on the layer’s GPU
         logits  = outputs.logits
 
         # move labels to same GPU as logits
-        labels = labels.to(logits.device)
+        labels = labels.to(logits.device) # Move labels to the same device as logits
 
-        # causal‑LM loss
-        shift_logits = logits[..., :-1, :].contiguous()
-        shift_labels = labels[..., 1:].contiguous()
+        # causal‑LM loss 
+
+        # Shifting for next-token prediction 
+        shift_logits = logits[..., :-1, :].contiguous() # drop the last time step’s scores since we cant predict the next token for the last word
+        shift_labels = labels[..., 1:].contiguous() #   drop the first token’s real label since we dont have any token to predict the first token
 
         loss_fct = nn.CrossEntropyLoss()
         loss = loss_fct(
@@ -78,10 +94,13 @@ lora_cfg = LoraConfig(
 )
 
 # ❸ Build an **empty** model just to compute the device‑map
+# https://medium.com/%40syedhamzatahir1001/how-hugging-faces-accelerate-helps-us-handle-huge-models-97ae9fe32fa6
+# https://preemo.medium.com/squeeze-more-out-of-your-gpu-for-llm-inference-a-tutorial-on-accelerate-deepspeed-610fce3025fd
+
 with init_empty_weights():
     empty_base = AutoModelForCausalLM.from_pretrained(
         BASE_MODEL,
-        torch_dtype=torch.float16,      # V100 supports fp16, not bf16
+        torch_dtype=torch.float16,      
     )
     empty_full = get_peft_model(empty_base, lora_cfg)  # adapters (still empty!) 
 
@@ -108,18 +127,17 @@ base_model = AutoModelForCausalLM.from_pretrained(
     load_in_4bit=USE_4BIT,           # bitsandbytes, optional
 )    
 
-# ❺ Add LoRA (real FP16 adapters on CPU)
+#Add LoRA (real FP16 adapters on CPU)
 model = get_peft_model(base_model, lora_cfg)
 
-# ❻ Dispatch … every param now lands on its GPU from the map
+# Dispatch … every param now lands on its GPU from the map
 model = dispatch_model(model, device_map)
 
-# good idea on big models
 model.gradient_checkpointing_enable()
 model.enable_input_require_grads() 
 model.config.use_cache = False
 
-# ❼ Tokeniser & data
+# Tokeniser & data
 tok = AutoTokenizer.from_pretrained(BASE_MODEL)
 tok.pad_token = tok.eos_token
 
@@ -152,7 +170,7 @@ val_tok   = val_ds.map(tok_fn,   batched=True, remove_columns=["text"])
 
 collator = DataCollatorForLanguageModeling(tok, mlm=False)
 
-# ❽ TrainingArguments & Trainer
+# TrainingArguments & Trainer
 args = TrainingArguments(
     output_dir             = OUTPUT_DIR,
     per_device_train_batch_size = 1,
@@ -160,15 +178,15 @@ args = TrainingArguments(
     learning_rate          = 1e-4,
     num_train_epochs       = 1,
     logging_steps          = 10,
-    save_strategy = "steps",    # ← keyword
-    save_steps    = 4070,         # ← integer interval
+    save_strategy = "steps",    
+    save_steps    = 4070,         
     save_total_limit = 3, 
     fp16                   = True,        # fp16 on V100s
     ddp_find_unused_parameters=False,
     report_to              = "none",
 )
 
-trainer = LoRATrainer(          # ⬅ use our subclass
+trainer = LoRATrainer(          
     model = model,
     args  = args,
     train_dataset = train_tok,
@@ -178,9 +196,9 @@ trainer = LoRATrainer(          # ⬅ use our subclass
 )
 
 
-# ❾ Train!
+#Train!
 trainer.train()
 
-# 🔟 Save only the adapters (tiny) + tokenizer
+# Save 
 trainer.model.save_pretrained(OUTPUT_DIR)
 tok.save_pretrained(OUTPUT_DIR)
