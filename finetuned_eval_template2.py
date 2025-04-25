@@ -10,7 +10,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 splits = {'train': 'squad_v2/train-00000-of-00001.parquet', 'validation': 'squad_v2/validation-00000-of-00001.parquet'}
 df = pd.read_parquet("hf://datasets/rajpurkar/squad_v2/" + splits["validation"])
 
-def create_transformers_qa_system(model_name="/scratch/gjf3sa/llama8b_squad_lora", temperature=0.7):
+def create_transformers_qa_system(model_name="/scratch/gjf3sa/llama8b_lora_accerate_entireModel", temperature=0.7):
     """
     Creates a QA system using only the transformers library.
     """
@@ -21,7 +21,9 @@ def create_transformers_qa_system(model_name="/scratch/gjf3sa/llama8b_squad_lora
         
     model = AutoModelForCausalLM.from_pretrained(
         model_name, 
-        device_map="auto"
+        device_map="auto",
+        torch_dtype=torch.float16,
+        assign=True,
     )
     
     print("Successfully loaded model and tokenizer")
@@ -185,7 +187,7 @@ if __name__ == "__main__":
     # Run predictions
     predictions = {}
     total_time = 0
-    num_examples = 50
+    num_examples = len(df)
     
     for i in range(num_examples):
         passage = df.iloc[i]["context"]
