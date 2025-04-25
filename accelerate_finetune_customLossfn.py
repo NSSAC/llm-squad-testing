@@ -36,7 +36,49 @@ class EpochTimer(TrainerCallback):
                      f"({dt:.1f} s)")
 
             
+class LoRATrainer(Trainer):
+    # Look at lines 1064- 1069
+    # https://github.com/huggingface/transformers/blob/7293fdc5b9cc809c2aa2ceb84f903ad47e5c06f0/src/transformers/models/llama/modeling_llama.py#L1061
+    
+    # Also used chatgpt prompting to obtain a solution to override the RuntimeError: Expected all tensors to be on the same device, but found at least two devices,
+
+
+    # Detailed explaination of below code
+
+    
+    def compute_loss(
+        self,
+        model,
+        inputs,
+        return_outputs: bool = False,
+        **kwargs              # <‑‑ catches num_items_in_batch or anything new
+    ):
+        import torch.nn as nn
+
+        labels = inputs.pop("labels") #Labels are removed  the model doesn’t compute its built-in loss.
+        outputs = model(**inputs)      # Run a forward pass to get logits         # logits on the layer’s GPU
+        logits  = outputs.logits
+
+        # move labels to same GPU as logits
+        labels = labels.to(logits.device) # Move labels to the same device as logits
+
+        # causal‑LM loss 
+
+        # Shifting for next-token prediction 
+        shift_logits = logits[..., :-1, :].contiguous() # drop the last time step’s scores since we cant predict the next token for the last word
+        shift_labels = labels[..., 1:].contiguous() #   drop the first token’s real label since we dont have any token to predict the first token
+
+        loss_fct = nn.CrossEntropyLoss()
+        loss = loss_fct(
+            shift_logits.view(-1, shift_logits.size(-1)),
+            shift_labels.view(-1),
+        )
+
+        return (loss, outputs) if return_outputs else loss
+
+
 # (optional) bitsandbytes 4‑bit to save VRAM
+#   pip install bitsandbytes
 USE_4BIT = False                 # flip to True if you want 4‑bit base weights
 
 # ❷ Paths & LoRA hyper‑params
@@ -52,17 +94,45 @@ lora_cfg = LoraConfig(
                      "gate_proj","up_proj","down_proj"],
 )
 
+# ❸ Build an **empty** model just to compute the device‑map
+# https://medium.com/%40syedhamzatahir1001/how-hugging-faces-accelerate-helps-us-handle-huge-models-97ae9fe32fa6
+# https://preemo.medium.com/squeeze-more-out-of-your-gpu-for-llm-inference-a-tutorial-on-accelerate-deepspeed-610fce3025fd
+
+with init_empty_weights():
+    empty_base = AutoModelForCausalLM.from_pretrained(
+        BASE_MODEL,
+        torch_dtype=torch.float16,      
+    )
+    empty_full = get_peft_model(empty_base, lora_cfg)  # adapters (still empty!) 
+
+# 4 × 32 GB V100 – leave a couple GB per card for gradients/activations
+max_mem = {i: "14GiB" for i in range(4)}   # 14 GiB is safe on 32 GiB cards
+max_mem["cpu"] = "32GiB"                   # optional off‑load overflow
+
+
+device_map = infer_auto_device_map(
+    empty_full,
+    max_memory=max_mem,
+    no_split_module_classes=["LlamaDecoderLayer"],  # keep full decoder blocks together
+)
+print("Device map:")
+for k,v in device_map.items():
+    print(f"  {k:10s} → {v}")
+
 # ❹ Reload **real** weights
 base_model = AutoModelForCausalLM.from_pretrained(
     BASE_MODEL,
     torch_dtype=torch.float16,
     low_cpu_mem_usage=True,
-    device_map="auto",          # keep on CPU for now
+    device_map={"": "cpu"},          # keep on CPU for now
     load_in_4bit=USE_4BIT,           # bitsandbytes, optional
 )    
 
 #Add LoRA (real FP16 adapters on CPU)
 model = get_peft_model(base_model, lora_cfg)
+
+# Dispatch … every param now lands on its GPU from the map
+model = dispatch_model(model, device_map)
 
 model.gradient_checkpointing_enable()
 model.enable_input_require_grads() 
@@ -117,7 +187,7 @@ args = TrainingArguments(
     report_to              = "none",
 )
 
-trainer = Trainer(          
+trainer = LoRATrainer(          
     model = model,
     args  = args,
     train_dataset = train_tok,
