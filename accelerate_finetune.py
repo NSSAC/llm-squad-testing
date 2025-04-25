@@ -1,6 +1,7 @@
 # train_llama8b_lora_multigpu.py
 # ------------------------------------------------------
-# ❶ Imports
+# https://www.acorn.io/resources/learning-center/fine-tuning-llama-2/
+# https://www.philschmid.de/fine-tune-google-gemma#2-create-and-prepare-the-dataset
 import os, torch, time, logging
 from datasets import load_dataset
 from transformers import (
@@ -11,10 +12,9 @@ from transformers import (
 )
 from peft import LoraConfig, get_peft_model, TaskType
 
-#  -------- Accelerate helpers --------
+
 from accelerate import init_empty_weights
-# from accelerate.utils import infer_auto_device_map, dispatch_model
-# also valid
+
 from accelerate.big_modeling import infer_auto_device_map, dispatch_model, init_empty_weights
 
 # enable logging
