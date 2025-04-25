@@ -23,7 +23,7 @@ bnb_config8 = BitsAndBytesConfig(
 )
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name, quantization_config=bnb_config8, device_map="auto")
+model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype="float16", device_map="auto")
 # If the answer is explicitly mentioned in the context, provide the **exact phrasing from the context**. 
 def format_prompt(system_message, context, question, example):
     prompt = f"""
