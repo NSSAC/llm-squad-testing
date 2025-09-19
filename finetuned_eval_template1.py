@@ -22,7 +22,7 @@ model_path = "/home/gjf3sa/sneha/midas/smol-course-llm-finetuning/1_instruction_
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 model = AutoModelForCausalLM.from_pretrained(
     model_path, 
-    torch_dtype=torch.float32,
+    torch_dtype=torch.float16,
     device_map="auto"
 )
 

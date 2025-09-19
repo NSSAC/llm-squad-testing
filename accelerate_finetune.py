@@ -38,7 +38,7 @@ class EpochTimer(TrainerCallback):
 
 # ❷ Paths & LoRA hyper‑params
 BASE_MODEL = "meta-llama/Meta-Llama-3-8B-Instruct"
-OUTPUT_DIR = "/scratch/gjf3sa/llama8b_lora_accerate_entireModel"
+OUTPUT_DIR = "/scratch/gjf3sa/llama8b_lora_accerate_entireModel_3"
 
 lora_cfg = LoraConfig(
     r             = 8,           # tiny adapters → small VRAM
